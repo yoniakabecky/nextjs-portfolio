@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     background-color: #333;
     font-family: 'Josefin Sans', sans-serif;
+    color: #EAEAEA;
   }
 
   h1 {
@@ -29,6 +30,11 @@ const GlobalStyles = createGlobalStyle`
   p {
     font-size: 1.8rem;
     line-height: 120%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 `;
 
