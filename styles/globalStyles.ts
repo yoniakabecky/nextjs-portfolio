@@ -31,6 +31,11 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1.8rem;
     line-height: 120%;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyles;
