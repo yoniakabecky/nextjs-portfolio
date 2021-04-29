@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     background-color: #333;
     font-family: 'Josefin Sans', sans-serif;
+    color: #EAEAEA;
   }
 
   h1 {
