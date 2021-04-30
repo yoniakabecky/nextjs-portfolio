@@ -62,7 +62,6 @@ export default function Showcase({
 
 const Root = styled.section`
   position: relative;
-  z-index: -1;
   margin: 0 auto;
   min-height: 100vh;
 `;
