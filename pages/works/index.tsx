@@ -10,7 +10,7 @@ export default function Works() {
     <>
       <Navigation contact />
 
-      <section>
+      <ShowcaseWrapper>
         <Heading>My Works</Heading>
         {works.map((work, i) => (
           <Showcase {...work} key={`work-${i}`} />
@@ -21,10 +21,16 @@ export default function Works() {
 
           {/* scroll */}
         </TimeLine>
-      </section>
+      </ShowcaseWrapper>
     </>
   );
 }
+
+const ShowcaseWrapper = styled.section`
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+`;
 
 const Heading = styled.h1`
   display: none;
@@ -36,6 +42,7 @@ const TimeLine = styled.div`
   right: 7.6rem;
   align-items: center;
   transform: translateY(-50%);
+  z-index: -1;
   height: 70vh;
 `;
 

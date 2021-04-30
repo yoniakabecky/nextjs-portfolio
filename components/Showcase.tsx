@@ -64,6 +64,7 @@ const Root = styled.article`
   position: relative;
   margin: 0 auto;
   min-height: 100vh;
+  scroll-snap-align: start;
 `;
 
 const Centered = styled.div`
@@ -107,18 +108,26 @@ const ImageWrapper = styled.div`
   border-radius: 8px;
   width: 60rem;
   height: 40rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+  }
 `;
 
 const Title = styled.h1`
   font-family: ${(props) => props.theme.fonts.accent};
   font-size: 9.6rem;
   line-height: 105%;
+  text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3);
 `;
 
 const Description = styled.p`
   margin: 0.8rem 0;
   font-size: 2rem;
   line-height: 130%;
+  text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
 `;
 
 const Stacks = styled.div`
@@ -128,7 +137,7 @@ const Stacks = styled.div`
 const Stack = styled.span`
   display: inline-block;
   border-radius: 2rem;
-  margin: 0.4rem 0.4rem;
+  margin: 0 0.4rem;
   background-color: ${(props) => props.theme.colors.dark};
   padding: 0.5rem 1.2rem 0.3rem;
   font-weight: 300;
