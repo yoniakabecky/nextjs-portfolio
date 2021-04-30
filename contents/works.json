@@ -3,7 +3,7 @@
     "date": "Feb. 2021",
     "title": "Kaori Izakaya",
     "description": "An online restaurant menu with management app",
-    "techStack": "Next.js, Firebase, Material-UI",
+    "techStack": ["Next.js", "Firebase", "Material-UI"],
     "image": "./imageTemp.png",
     "details": "/works/kaori-izakaya"
   },
@@ -11,7 +11,7 @@
     "date": "Jan. 2021",
     "title": "Fresh Meal Plans",
     "description": "Case study for a meal plan subscription business",
-    "techStack": "React.js, Tailwind CSS",
+    "techStack": ["React.js", "Tailwind CSS"],
     "image": "",
     "details": "/works/meal-plan"
   },
@@ -19,7 +19,7 @@
     "date": "Nov. 2020",
     "title": "Which is better?",
     "description": "A social application to get instant feedback from friends",
-    "techStack": "MERN stack, Socket.io, Material-UI",
+    "techStack": ["MERN stack", "Socket.io", "Material-UI"],
     "image": "",
     "details": "/works/instant-feedback-app"
   },
@@ -27,7 +27,7 @@
     "date": "Jul. 2020",
     "title": "DXER",
     "description": "A corporate website for a Japanese start-up company",
-    "techStack": "Next.js, Contentful, Styled-components",
+    "techStack": ["Next.js", "Contentful", "Styled-components"],
     "image": "",
     "details": "/works/dxer-website"
   },
@@ -35,7 +35,7 @@
     "date": "Feb. 2020",
     "title": "Macrame shop",
     "description": "An e-commerce site for my friend (first freelance work)",
-    "techStack": "React.js, Contentful, PayPal, Material-UI",
+    "techStack": ["React.js", "Contentful", "PayPal", "Material-UI"],
     "image": "",
     "details": "/works/macrame-shop"
   },
@@ -43,7 +43,7 @@
     "date": "Jul. 2019",
     "title": "21",
     "description": "A simple black jack game (first JavaScript project)",
-    "techStack": "Javascript",
+    "techStack": ["Javascript"],
     "image": "",
     "details": "/works/black-jack"
   },
@@ -51,7 +51,7 @@
     "date": "",
     "title": "Traveler",
     "description": "The best time, you know...",
-    "techStack": "",
+    "techStack": [],
     "image": "",
     "details": ""
   },
@@ -59,7 +59,7 @@
     "date": "2016",
     "title": "Vector",
     "description": "Product design for a private school in Vancouver",
-    "techStack": "Illustrator",
+    "techStack": ["Illustrator"],
     "image": "",
     "details": "/works/vector"
   },
@@ -67,7 +67,7 @@
     "date": "",
     "title": "Another story",
     "description": "Interested? Ask me...",
-    "techStack": "",
+    "techStack": [],
     "image": "",
     "details": ""
   }

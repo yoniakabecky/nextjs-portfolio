@@ -7,7 +7,7 @@ interface Props {
   date: string;
   title: string;
   description: string;
-  techStack: string;
+  techStack: string[];
   image: string;
   details: string;
 }
@@ -29,7 +29,11 @@ export default function Showcase({
 
             <Description>{description}</Description>
 
-            <Stack>{techStack}</Stack>
+            <Stacks>
+              {techStack.map((stack, i) => (
+                <Stack key={`stack-${i}`}>{stack}</Stack>
+              ))}
+            </Stacks>
 
             {details && (
               <CTA>
@@ -118,14 +122,30 @@ const Description = styled.p`
   line-height: 130%;
 `;
 
-const Stack = styled.small`
+const Stacks = styled.div`
+  display: flex;
+`;
+
+const Stack = styled.span`
+  display: inline-block;
+  border-radius: 2rem;
+  margin: 0.4rem 0.4rem;
+  background-color: ${(props) => props.theme.colors.dark};
+  padding: 0.5rem 1.2rem 0.3rem;
+  font-weight: 300;
+  font-size: 1.4rem;
   line-height: 130%;
+
+  :first-child {
+    margin-left: 0;
+  }
 `;
 
 const CTA = styled.div`
   display: flex;
   align-items: center;
   margin-top: 3.6rem;
+  cursor: pointer;
 
   p {
     margin-bottom: -0.3rem;
