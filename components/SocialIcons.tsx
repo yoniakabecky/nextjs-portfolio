@@ -39,6 +39,16 @@ const Root = styled.div`
       margin-left: 0;
     }
   }
+
+  @media (max-width: 424px) {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+
+    a {
+      margin: unset;
+    }
+  }
 `;
 
 const IconWrapper = styled.span<IconWrapperProps>`
