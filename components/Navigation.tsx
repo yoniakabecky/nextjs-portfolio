@@ -12,7 +12,7 @@ interface RootProps {
 }
 
 interface NameProps {
-  display: boolean;
+  show: boolean;
 }
 
 export default function Navigation({
@@ -21,7 +21,7 @@ export default function Navigation({
 }: Props): ReactElement {
   return (
     <Root hasName={!noName}>
-      <Name display={!noName}>
+      <Name show={!noName}>
         <Link href="/">Yoni Aoki</Link>
       </Name>
 
@@ -46,15 +46,24 @@ const Root = styled.nav<RootProps>`
   padding: 0 7.6rem;
   width: 100vw;
   height: 12rem;
+
+  @media (max-width: 767px) {
+    padding: 0 4rem;
+    height: 12rem;
+  }
 `;
 
 const Name = styled.div<NameProps>`
-  display: ${({ display }) => (display ? "block" : "none")};
+  display: ${(props) => (props.show ? "block" : "none")};
 
   a {
     color: ${(props) => props.theme.colors.tomato};
     font-family: ${(props) => props.theme.fonts.accent};
     font-size: 3.6rem;
+
+    @media (max-width: 767px) {
+      font-size: 2.6rem;
+    }
   }
 `;
 
@@ -64,5 +73,9 @@ const RightTop = styled.div`
   a {
     font-size: 2rem;
     font-weight: 300;
+
+    @media (max-width: 767px) {
+      font-size: 1.6rem;
+    }
   }
 `;

@@ -1,3 +1,4 @@
+import ContactPageContent from "../components/ContactPageContent";
 import Navigation from "../components/Navigation";
 
 export default function Contact() {
@@ -5,7 +6,7 @@ export default function Contact() {
     <>
       <Navigation />
 
-      <p>this is contact page</p>
+      <ContactPageContent />
     </>
   );
 }
