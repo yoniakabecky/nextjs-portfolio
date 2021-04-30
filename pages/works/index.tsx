@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Navigation from "../../components/Navigation";
+import ScrollIndicator from "../../components/ScrollIndicator";
 import Showcase from "../../components/Showcase";
 
 // TODO: will use some headless cms, just temporarily
@@ -18,9 +19,10 @@ export default function Works() {
 
         <TimeLine>
           <Axis />
-
-          {/* scroll */}
         </TimeLine>
+
+        {/* TODO: Add scroll position hooks to hide <Scroll /> when reach to the bottom */}
+        <ScrollIndicator />
       </ShowcaseWrapper>
     </>
   );
@@ -46,7 +48,6 @@ const TimeLine = styled.div`
   height: 70vh;
 `;
 
-// TODO: axis has to be under the circle...
 const Axis = styled.div`
   height: 100%;
   width: 2px;
