@@ -20,16 +20,16 @@ export default function TopPageContent(): ReactElement {
   );
 }
 
-const Root = styled.div`
+export const Root = styled.div`
   position: absolute;
   bottom: 7.5vh;
   left: 10vw;
 `;
 
-const Heading = styled.h1`
+export const Heading = styled.h1`
   font-family: ${(props) => props.theme.fonts.accent};
   font-size: 9.6rem;
-  line-height: 105%;
+  line-height: 100%;
 
   @media (min-width: 1500px) {
     font-size: 7vw;
@@ -46,7 +46,7 @@ const Name = styled.span`
   color: ${(props) => props.theme.colors.tomato};
 `;
 
-const Text = styled.p`
+export const Text = styled.p`
   width: 80vw;
   font-size: 2.4rem;
   line-height: 130%;
@@ -59,7 +59,7 @@ const Text = styled.p`
   }
 `;
 
-const LineBreak = styled.br`
+export const LineBreak = styled.br`
   @media (max-width: 767px) {
     display: none;
   }
