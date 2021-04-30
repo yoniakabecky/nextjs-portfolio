@@ -10,18 +10,25 @@ export default function Works() {
     <>
       <Navigation contact />
 
-      {works.map((work, i) => (
-        <Showcase {...work} key={`work-${i}`} />
-      ))}
+      <section>
+        <Heading>My Works</Heading>
+        {works.map((work, i) => (
+          <Showcase {...work} key={`work-${i}`} />
+        ))}
 
-      <TimeLine>
-        <Axis />
+        <TimeLine>
+          <Axis />
 
-        {/* scroll */}
-      </TimeLine>
+          {/* scroll */}
+        </TimeLine>
+      </section>
     </>
   );
 }
+
+const Heading = styled.h1`
+  display: none;
+`;
 
 const TimeLine = styled.div`
   position: fixed;

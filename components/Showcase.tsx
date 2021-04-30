@@ -60,7 +60,7 @@ export default function Showcase({
   );
 }
 
-const Root = styled.section`
+const Root = styled.article`
   position: relative;
   margin: 0 auto;
   min-height: 100vh;

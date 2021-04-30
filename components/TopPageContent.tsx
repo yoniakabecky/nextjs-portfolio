@@ -20,7 +20,7 @@ export default function TopPageContent(): ReactElement {
   );
 }
 
-export const Root = styled.div`
+export const Root = styled.section`
   position: absolute;
   bottom: 7.5vh;
   left: 10vw;
