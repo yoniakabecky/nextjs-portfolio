@@ -36,3 +36,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+small {
+  font-weight: 300;
+  font-size: 1.4rem;
+}

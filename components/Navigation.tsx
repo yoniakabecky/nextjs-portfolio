@@ -38,6 +38,8 @@ export default function Navigation({
 
 const Root = styled.nav<RootProps>`
   display: flex;
+  position: fixed;
+  top: 0;
   justify-content: ${({ hasName }) => (hasName ? "space-between" : "flex-end")};
   align-items: center;
   margin: 0 auto;
