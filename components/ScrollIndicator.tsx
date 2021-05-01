@@ -12,9 +12,9 @@ interface RootProps {
 export default function ScrollIndicator({ hide = false }: Props): ReactElement {
   return (
     <Root hide={hide}>
-      <Text>scroll</Text>
-
       <Line />
+
+      <Text>scroll</Text>
     </Root>
   );
 }
@@ -22,7 +22,7 @@ export default function ScrollIndicator({ hide = false }: Props): ReactElement {
 const Root = styled.div<RootProps>`
   display: ${({ hide }) => (hide ? "none" : "flex")};
   position: fixed;
-  right: 7.6rem;
+  left: 7.6rem;
   bottom: 0;
   align-items: center;
   overflow: hidden;
@@ -30,7 +30,7 @@ const Root = styled.div<RootProps>`
 `;
 
 const Text = styled.small`
-  margin-right: 2.4rem;
+  margin-left: 2.4rem;
   letter-spacing: 0.1rem;
 `;
 
