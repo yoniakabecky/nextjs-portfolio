@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import size from "../styles/breakpoints";
 
 interface Props {
   noName?: boolean;
@@ -48,11 +49,14 @@ const Root = styled.nav<RootProps>`
   width: 100vw;
   height: 12rem;
 
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     padding: 0 4rem;
   }
-  @media (max-width: 767px) {
+  @media ${size.sm} {
     height: 10rem;
+  }
+  @media ${size.xs} {
+    padding: 0 2.4rem;
   }
 `;
 
@@ -64,7 +68,7 @@ const Name = styled.div<NameProps>`
     font-family: ${(props) => props.theme.fonts.accent};
     font-size: 3.6rem;
 
-    @media (max-width: 767px) {
+    @media ${size.xs} {
       font-size: 2.6rem;
     }
   }
@@ -77,7 +81,7 @@ const RightTop = styled.div`
     font-size: 2rem;
     font-weight: 300;
 
-    @media (max-width: 767px) {
+    @media ${size.xs} {
       font-size: 1.6rem;
     }
   }

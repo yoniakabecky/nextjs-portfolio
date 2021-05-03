@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Navigation from "../../components/Navigation";
 import ScrollIndicator from "../../components/ScrollIndicator";
 import Showcase from "../../components/Showcase";
+import size from "../../styles/breakpoints";
 
 // TODO: will use some headless cms, just temporarily
 import works from "../../contents/works.json";
@@ -47,7 +48,7 @@ const TimeLine = styled.div`
   z-index: -1;
   height: 70vh;
 
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     right: 4rem;
   }
 `;

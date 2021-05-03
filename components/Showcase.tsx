@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import ArrowForward from "./icons/ArrowForward";
+import size from "../styles/breakpoints";
 
 // TODO: create work interface
 interface Props {
@@ -80,10 +81,10 @@ const Centered = styled.div`
   transform: translateY(-50%);
   height: 40rem;
 
-  @media (min-width: 1500px) {
+  @media ${size.xl} {
     height: 70vh;
   }
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     top: 50%;
     left: 30%;
     transform: translate(-30%, -50%);
@@ -108,7 +109,7 @@ const InfoRoot = styled.div`
   transform: translateY(-50%);
   z-index: 1;
 
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     bottom: 0;
     transform: translateY(0);
   }
@@ -120,7 +121,7 @@ const Info = styled.div`
   backdrop-filter: blur(4px);
   padding: 1.6rem 2.4rem;
 
-  @media (min-width: 1500px) {
+  @media ${size.xl} {
     padding: 3.2rem 4rem;
   }
 `;
@@ -140,14 +141,14 @@ const ImageWrapper = styled.div`
     object-position: center;
   }
 
-  @media (min-width: 1500px) {
+  @media ${size.xl} {
     top: 50%;
     transform: translateY(-50%);
     width: 50vw;
     height: 40vw;
     max-height: 60vh;
   }
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     width: 45rem;
     height: 30rem;
   }
@@ -159,10 +160,10 @@ const Title = styled.h1`
   line-height: 105%;
   text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3);
 
-  @media (min-width: 1500px) {
+  @media ${size.xl} {
     font-size: 7vw;
   }
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     font-size: 6.4rem;
   }
 `;
@@ -173,7 +174,7 @@ const Description = styled.p`
   line-height: 130%;
   text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
 
-  @media (min-width: 1500px) {
+  @media ${size.xl} {
     margin: 1vw;
     font-size: 1.75vw;
   }
@@ -197,7 +198,7 @@ const Stack = styled.span`
     margin-left: 0;
   }
 
-  @media (min-width: 1500px) {
+  @media ${size.xl} {
     padding: 0.7rem 2rem 0.3rem;
     font-size: 1.2vw;
   }
@@ -220,7 +221,7 @@ const CTA = styled.div`
     fill: ${(props) => props.theme.colors.light};
   }
 
-  @media (min-width: 1500px) {
+  @media ${size.xl} {
     margin-top: 3vw;
 
     p {
@@ -232,7 +233,7 @@ const CTA = styled.div`
       height: 1.75vw;
     }
   }
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     p {
       font-size: 1.6rem;
     }
@@ -259,7 +260,7 @@ const Timeline = styled.div`
     height: 100%;
   }
 
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     right: 3.5rem;
   }
 `;

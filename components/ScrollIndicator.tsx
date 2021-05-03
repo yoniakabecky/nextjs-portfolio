@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import size from "../styles/breakpoints";
 
 interface Props {
   hide?: boolean;
@@ -28,7 +29,7 @@ const Root = styled.div<RootProps>`
   overflow: hidden;
   height: 6rem;
 
-  @media (max-width: 1024px) {
+  @media ${size.md} {
     left: 4rem;
   }
 `;
