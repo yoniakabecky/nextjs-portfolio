@@ -51,6 +51,9 @@ const TimeLine = styled.div`
   @media ${size.md} {
     right: 4rem;
   }
+  @media ${size.xs} {
+    display: none;
+  }
 `;
 
 const Axis = styled.div`

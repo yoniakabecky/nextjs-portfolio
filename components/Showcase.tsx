@@ -91,6 +91,11 @@ const Centered = styled.div`
     width: 70vw;
     height: 50vh;
   }
+  @media ${size.xs} {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+  }
 `;
 
 const Relative = styled.div`
@@ -112,6 +117,14 @@ const InfoRoot = styled.div`
   @media ${size.md} {
     bottom: 0;
     transform: translateY(0);
+  }
+  @media ${size.sm} {
+    justify-content: center;
+    width: 90%;
+  }
+  @media ${size.xs} {
+    top: 40%;
+    justify-content: flex-start;
   }
 `;
 
@@ -152,6 +165,9 @@ const ImageWrapper = styled.div`
     width: 45rem;
     height: 30rem;
   }
+  @media ${size.xs} {
+    width: 90%;
+  }
 `;
 
 const Title = styled.h1`
@@ -166,6 +182,9 @@ const Title = styled.h1`
   @media ${size.md} {
     font-size: 6.4rem;
   }
+  @media ${size.xs} {
+    font-size: 4rem;
+  }
 `;
 
 const Description = styled.p`
@@ -178,10 +197,14 @@ const Description = styled.p`
     margin: 1vw;
     font-size: 1.75vw;
   }
+  @media ${size.xs} {
+    font-size: 1.6rem;
+  }
 `;
 
 const Stacks = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const Stack = styled.span`
@@ -201,6 +224,10 @@ const Stack = styled.span`
   @media ${size.xl} {
     padding: 0.7rem 2rem 0.3rem;
     font-size: 1.2vw;
+  }
+  @media ${size.xs} {
+    margin: 0.4rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -223,7 +250,6 @@ const CTA = styled.div`
 
   @media ${size.xl} {
     margin-top: 3vw;
-
     p {
       margin-bottom: -0.3vw;
       font-size: 1.5vw;
@@ -240,6 +266,15 @@ const CTA = styled.div`
     svg {
       width: 1.8rem;
       height: 1.8rem;
+    }
+  }
+  @media ${size.xs} {
+    p {
+      font-size: 1.4rem;
+    }
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
     }
   }
 `;
@@ -263,6 +298,9 @@ const Timeline = styled.div`
   @media ${size.md} {
     right: 3.5rem;
   }
+  @media ${size.xs} {
+    display: none;
+  }
 `;
 
 const Circle = styled.span`
@@ -277,4 +315,8 @@ const Circle = styled.span`
 const Date = styled.p`
   color: ${(props) => props.theme.colors.tomato};
   font-size: 1.4rem;
+
+  @media ${size.xs} {
+    width: 2.6rem;
+  }
 `;

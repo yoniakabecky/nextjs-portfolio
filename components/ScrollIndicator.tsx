@@ -32,6 +32,9 @@ const Root = styled.div<RootProps>`
   @media ${size.md} {
     left: 4rem;
   }
+  @media ${size.xs} {
+    left: 2.4rem;
+  }
 `;
 
 const Text = styled.small`
