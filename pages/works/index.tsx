@@ -46,6 +46,10 @@ const TimeLine = styled.div`
   transform: translateY(-50%);
   z-index: -1;
   height: 70vh;
+
+  @media (max-width: 1024px) {
+    right: 4rem;
+  }
 `;
 
 const Axis = styled.div`

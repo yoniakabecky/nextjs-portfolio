@@ -48,9 +48,11 @@ const Root = styled.nav<RootProps>`
   width: 100vw;
   height: 12rem;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     padding: 0 4rem;
-    height: 12rem;
+  }
+  @media (max-width: 767px) {
+    height: 10rem;
   }
 `;
 

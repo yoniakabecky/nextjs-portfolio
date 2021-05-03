@@ -24,24 +24,26 @@ export default function Showcase({
     <Root>
       <Centered>
         <Relative>
-          <Info>
-            <Title>{title}</Title>
+          <InfoRoot>
+            <Info>
+              <Title>{title}</Title>
 
-            <Description>{description}</Description>
+              <Description>{description}</Description>
 
-            <Stacks>
-              {techStack.map((stack, i) => (
-                <Stack key={`stack-${i}`}>{stack}</Stack>
-              ))}
-            </Stacks>
+              <Stacks>
+                {techStack.map((stack, i) => (
+                  <Stack key={`stack-${i}`}>{stack}</Stack>
+                ))}
+              </Stacks>
 
-            {details && (
-              <CTA>
-                <p>See details</p>
-                <ArrowForward />
-              </CTA>
-            )}
-          </Info>
+              {details && (
+                <CTA>
+                  <p>See details</p>
+                  <ArrowForward />
+                </CTA>
+              )}
+            </Info>
+          </InfoRoot>
 
           <ImageWrapper>
             <img src={image} alt={`${title}`} />
@@ -81,6 +83,13 @@ const Centered = styled.div`
   @media (min-width: 1500px) {
     height: 70vh;
   }
+  @media (max-width: 1024px) {
+    top: 50%;
+    left: 30%;
+    transform: translate(-30%, -50%);
+    width: 70vw;
+    height: 50vh;
+  }
 `;
 
 const Relative = styled.div`
@@ -89,17 +98,24 @@ const Relative = styled.div`
   height: 100%;
 `;
 
-const Info = styled.div`
+const InfoRoot = styled.div`
   display: flex;
   position: absolute;
   top: 50%;
   left: 0;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   transform: translateY(-50%);
   z-index: 1;
+
+  @media (max-width: 1024px) {
+    bottom: 0;
+    transform: translateY(0);
+  }
+`;
+
+const Info = styled.div`
   border-radius: 0.8rem;
-  margin-right: -10rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
   padding: 1.6rem 2.4rem;
@@ -131,6 +147,10 @@ const ImageWrapper = styled.div`
     height: 40vw;
     max-height: 60vh;
   }
+  @media (max-width: 1024px) {
+    width: 45rem;
+    height: 30rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -141,6 +161,9 @@ const Title = styled.h1`
 
   @media (min-width: 1500px) {
     font-size: 7vw;
+  }
+  @media (max-width: 1024px) {
+    font-size: 6.4rem;
   }
 `;
 
@@ -199,6 +222,7 @@ const CTA = styled.div`
 
   @media (min-width: 1500px) {
     margin-top: 3vw;
+
     p {
       margin-bottom: -0.3vw;
       font-size: 1.5vw;
@@ -206,6 +230,15 @@ const CTA = styled.div`
     svg {
       width: 1.75vw;
       height: 1.75vw;
+    }
+  }
+  @media (max-width: 1024px) {
+    p {
+      font-size: 1.6rem;
+    }
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
     }
   }
 `;
@@ -224,6 +257,10 @@ const Timeline = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    right: 3.5rem;
   }
 `;
 

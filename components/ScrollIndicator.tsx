@@ -27,6 +27,10 @@ const Root = styled.div<RootProps>`
   align-items: center;
   overflow: hidden;
   height: 6rem;
+
+  @media (max-width: 1024px) {
+    left: 4rem;
+  }
 `;
 
 const Text = styled.small`
