@@ -33,7 +33,7 @@ export const Heading = styled.h1`
   line-height: 100%;
 
   @media ${size.xl} {
-    font-size: 7vw;
+    font-size: 6.5vw;
   }
   @media ${size.sm} {
     font-size: 6.4rem;
@@ -53,7 +53,7 @@ export const Text = styled.p`
   line-height: 130%;
 
   @media ${size.xl} {
-    font-size: 1.75vw;
+    font-size: 1.6vw;
   }
   @media ${size.sm} {
     font-size: 1.6rem;

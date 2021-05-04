@@ -82,6 +82,8 @@ const Centered = styled.div`
   height: 40rem;
 
   @media ${size.xl} {
+    left: 10vw;
+    right: 18vw;
     height: 70vh;
   }
   @media ${size.md} {
@@ -177,7 +179,7 @@ const Title = styled.h1`
   text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3);
 
   @media ${size.xl} {
-    font-size: 7vw;
+    font-size: 6vw;
   }
   @media ${size.md} {
     font-size: 6.4rem;
@@ -194,8 +196,8 @@ const Description = styled.p`
   text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
 
   @media ${size.xl} {
-    margin: 1vw;
-    font-size: 1.75vw;
+    margin: 1vw 0;
+    font-size: 1.6vw;
   }
   @media ${size.xs} {
     font-size: 1.6rem;
@@ -252,7 +254,7 @@ const CTA = styled.div`
     margin-top: 3vw;
     p {
       margin-bottom: -0.3vw;
-      font-size: 1.5vw;
+      font-size: 1.2vw;
     }
     svg {
       width: 1.75vw;
