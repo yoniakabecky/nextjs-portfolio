@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import size from "../styles/breakpoints";
 import SocialIcons from "./SocialIcons";
 
 export default function TopPageContent(): ReactElement {
@@ -31,13 +32,13 @@ export const Heading = styled.h1`
   font-size: 9.6rem;
   line-height: 100%;
 
-  @media (min-width: 1500px) {
-    font-size: 7vw;
+  @media ${size.xl} {
+    font-size: 6.5vw;
   }
-  @media (max-width: 767px) {
+  @media ${size.sm} {
     font-size: 6.4rem;
   }
-  @media (max-width: 424px) {
+  @media ${size.xs} {
     font-size: 5rem;
   }
 `;
@@ -51,16 +52,16 @@ export const Text = styled.p`
   font-size: 2.4rem;
   line-height: 130%;
 
-  @media (min-width: 1500px) {
-    font-size: 1.75vw;
+  @media ${size.xl} {
+    font-size: 1.6vw;
   }
-  @media (max-width: 767px) {
+  @media ${size.sm} {
     font-size: 1.6rem;
   }
 `;
 
 export const LineBreak = styled.br`
-  @media (max-width: 767px) {
+  @media ${size.sm} {
     display: none;
   }
 `;

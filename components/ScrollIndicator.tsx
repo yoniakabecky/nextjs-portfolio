@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import size from "../styles/breakpoints";
 
 interface Props {
   hide?: boolean;
@@ -27,6 +28,13 @@ const Root = styled.div<RootProps>`
   align-items: center;
   overflow: hidden;
   height: 6rem;
+
+  @media ${size.md} {
+    left: 4rem;
+  }
+  @media ${size.xs} {
+    left: 2.4rem;
+  }
 `;
 
 const Text = styled.small`
