@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import size from "../styles/breakpoints";
@@ -8,7 +9,7 @@ export default function TopPageContent(): ReactElement {
     <Root>
       <Heading>
         Hi there, <br />
-        I'm <Name>Yoni Aoki</Name>
+        I'm <Name layoutId="name">Yoni Aoki</Name>
       </Heading>
 
       <Text>
@@ -43,7 +44,8 @@ export const Heading = styled.h1`
   }
 `;
 
-const Name = styled.span`
+const Name = styled(motion.span)`
+  display: inline-block;
   color: ${(props) => props.theme.colors.tomato};
 `;
 

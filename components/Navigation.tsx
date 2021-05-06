@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
@@ -12,19 +13,17 @@ interface RootProps {
   hasName: boolean;
 }
 
-interface NameProps {
-  show: boolean;
-}
-
 export default function Navigation({
   noName = false,
   contact = false,
 }: Props): ReactElement {
   return (
     <Root hasName={!noName}>
-      <Name show={!noName}>
-        <Link href="/">Yoni Aoki</Link>
-      </Name>
+      {!noName && (
+        <Name layoutId="name">
+          <Link href="/">Yoni Aoki</Link>
+        </Name>
+      )}
 
       <RightTop>
         {contact ? (
@@ -60,8 +59,8 @@ const Root = styled.nav<RootProps>`
   }
 `;
 
-const Name = styled.div<NameProps>`
-  display: ${(props) => (props.show ? "block" : "none")};
+const Name = styled(motion.span)`
+  display: inline-block;
 
   a {
     color: ${(props) => props.theme.colors.tomato};
