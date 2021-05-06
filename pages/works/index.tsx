@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 import Navigation from "../../components/Navigation";
 import ScrollIndicator from "../../components/ScrollIndicator";
 import Showcase from "../../components/Showcase";
@@ -8,12 +9,36 @@ import size from "../../styles/breakpoints";
 import works from "../../contents/works.json";
 
 export default function Works() {
+  const [isLastPage, setIsLastPage] = useState<boolean>(false);
+
+  useEffect(() => {
+    const showcases = window?.document?.getElementById("showcases");
+
+    if (showcases) {
+      const handleScroll = () => {
+        const hasPage =
+          showcases.scrollHeight - showcases.scrollTop > window.innerHeight;
+
+        if (!hasPage && !isLastPage) {
+          setIsLastPage(true);
+        } else if (hasPage && isLastPage) {
+          setIsLastPage(false);
+        }
+      };
+
+      showcases.addEventListener("scroll", handleScroll);
+
+      return () => showcases.removeEventListener("scroll", handleScroll);
+    }
+  }, [isLastPage]);
+
   return (
     <>
       <Navigation contact />
 
-      <ShowcaseWrapper>
+      <ShowcaseWrapper id="showcases">
         <Heading>My Works</Heading>
+
         {works.map((work, i) => (
           <Showcase {...work} key={`work-${i}`} />
         ))}
@@ -22,8 +47,7 @@ export default function Works() {
           <Axis />
         </TimeLine>
 
-        {/* TODO: Add scroll position hooks to hide <Scroll /> when reach to the bottom */}
-        <ScrollIndicator />
+        {!isLastPage && <ScrollIndicator />}
       </ShowcaseWrapper>
     </>
   );
