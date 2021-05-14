@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+import Link from "next/link";
 import React, { ReactElement } from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import ArrowForward from "./icons/ArrowForward";
 import size from "../styles/breakpoints";
 import { IWork } from "../types";
-import Link from "next/link";
+import ArrowForward from "./icons/ArrowForward";
 
 export default function Showcase({
   title,
@@ -15,9 +17,13 @@ export default function Showcase({
   slugs,
 }: IWork): ReactElement {
   const techStack = skills[0]?.text.split(",") ?? [];
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    rootMargin: "-15% 0px",
+  });
 
   return (
-    <Root>
+    <Root ref={ref} style={{ opacity: inView ? 1 : 0 }}>
       <Centered>
         <Relative>
           <InfoRoot>
@@ -67,11 +73,12 @@ export default function Showcase({
   );
 }
 
-const Root = styled.article`
+const Root = styled(motion.article)`
   position: relative;
   margin: 0 auto;
   min-height: 100vh;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  transition: opacity 0.3s ease-in-out;
 `;
 
 const Centered = styled.div`
