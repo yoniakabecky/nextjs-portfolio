@@ -2,34 +2,29 @@ import React, { ReactElement } from "react";
 import styled from "styled-components";
 import ArrowForward from "./icons/ArrowForward";
 import size from "../styles/breakpoints";
-
-// TODO: create work interface
-interface Props {
-  date: string;
-  title: string;
-  description: string;
-  techStack: string[];
-  image: string;
-  details: string;
-}
+import { IWork } from "../types";
+import Link from "next/link";
 
 export default function Showcase({
-  date,
   title,
   description,
-  techStack,
+  skills,
   image,
   details,
-}: Props): ReactElement {
+  date,
+  slugs,
+}: IWork): ReactElement {
+  const techStack = skills[0]?.text.split(",") ?? [];
+
   return (
     <Root>
       <Centered>
         <Relative>
           <InfoRoot>
             <Info>
-              <Title>{title}</Title>
+              <Title>{title[0].text}</Title>
 
-              <Description>{description}</Description>
+              <Description>{description[0].text}</Description>
 
               <Stacks>
                 {techStack.map((stack, i) => (
@@ -38,23 +33,32 @@ export default function Showcase({
               </Stacks>
 
               {details && (
-                <CTA>
-                  <p>See details</p>
-                  <ArrowForward />
-                </CTA>
+                <Link href={`/works/${slugs[0]}`}>
+                  <CTA>
+                    <p>See details</p>
+                    <ArrowForward />
+                  </CTA>
+                </Link>
               )}
             </Info>
           </InfoRoot>
 
           <ImageWrapper>
-            <img src={image} alt={`${title}`} />
+            <img src={image.url ?? undefined} alt={image.alt ?? undefined} />
           </ImageWrapper>
         </Relative>
       </Centered>
 
       <Timeline>
         <div>
-          <Date>{date}</Date>
+          <DateDisplay>
+            {date
+              ? `${new Date(date).toLocaleString("default", {
+                  month: "short",
+                  year: "numeric",
+                })}`
+              : null}
+          </DateDisplay>
 
           <Circle />
         </div>
@@ -150,8 +154,8 @@ const ImageWrapper = styled.div`
   height: 40rem;
 
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     object-fit: fill;
     object-position: center;
   }
@@ -316,7 +320,7 @@ const Circle = styled.span`
   height: 0.8rem;
 `;
 
-const Date = styled.p`
+const DateDisplay = styled.p`
   color: ${(props) => props.theme.colors.tomato};
   font-size: 1.4rem;
 

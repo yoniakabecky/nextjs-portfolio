@@ -1,14 +1,18 @@
+import { GetStaticProps } from "next";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import Navigation from "../../components/Navigation";
 import ScrollIndicator from "../../components/ScrollIndicator";
 import Showcase from "../../components/Showcase";
+import { getAllWorksData } from "../../lib/prismicio";
 import size from "../../styles/breakpoints";
+import { IWork } from "../../types";
 
-// TODO: will use some headless cms, just temporarily
-import works from "../../contents/works.json";
+interface Props {
+  data: IWork[];
+}
 
-export default function Works() {
+export default function Works({ data }: Props) {
   const [isLastPage, setIsLastPage] = useState<boolean>(false);
 
   useEffect(() => {
@@ -39,7 +43,7 @@ export default function Works() {
       <ShowcaseWrapper id="showcases">
         <Heading>My Works</Heading>
 
-        {works.map((work, i) => (
+        {data.map((work, i) => (
           <Showcase {...work} key={`work-${i}`} />
         ))}
 
@@ -52,6 +56,14 @@ export default function Works() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await getAllWorksData();
+
+  return {
+    props: { data },
+  };
+};
 
 const ShowcaseWrapper = styled.section`
   height: 100vh;
