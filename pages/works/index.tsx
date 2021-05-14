@@ -8,17 +8,12 @@ import { getAllWorksData } from "../../lib/prismicio";
 import size from "../../styles/breakpoints";
 import { IWork } from "../../types";
 
-// TODO: will use some headless cms, just temporarily
-import works from "../../contents/works.json";
-
 interface Props {
-  data: IWork;
+  data: IWork[];
 }
 
 export default function Works({ data }: Props) {
   const [isLastPage, setIsLastPage] = useState<boolean>(false);
-
-  console.log({ data });
 
   useEffect(() => {
     const showcases = window?.document?.getElementById("showcases");
@@ -48,7 +43,7 @@ export default function Works({ data }: Props) {
       <ShowcaseWrapper id="showcases">
         <Heading>My Works</Heading>
 
-        {works.map((work, i) => (
+        {data.map((work, i) => (
           <Showcase {...work} key={`work-${i}`} />
         ))}
 

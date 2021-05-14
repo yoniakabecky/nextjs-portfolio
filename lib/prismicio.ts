@@ -1,4 +1,5 @@
 import Prismic from "@prismicio/client";
+import { IWork } from "../types";
 
 const apiEndpoint = process.env.PRISMICIO_API_ENDPOINT!;
 const accessToken = process.env.PRISMICIO_ACCESS_TOKEN;
@@ -24,5 +25,14 @@ export const getAllWorksData = async () => {
     Prismic.Predicates.at("document.type", "works")
   );
 
-  return res.results.map((result) => result.data);
+  const data: IWork[] = res.results.map(({ slugs, data }) => ({
+    slugs,
+    ...data,
+  }));
+
+  const sorted = data.sort(
+    (a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime()
+  );
+
+  return sorted;
 };

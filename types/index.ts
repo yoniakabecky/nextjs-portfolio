@@ -1,10 +1,11 @@
 import { ImageField, RichTextBlock } from "./prismic-types";
 
 export interface IWork {
-  description: RichTextBlock;
-  details: RichTextBlock;
+  description: RichTextBlock[];
+  details: RichTextBlock[];
   image: ImageField;
-  skills: RichTextBlock;
-  timeline: string;
-  title: RichTextBlock;
+  skills: RichTextBlock[];
+  date: string | null;
+  title: RichTextBlock[];
+  slugs: string[];
 }
