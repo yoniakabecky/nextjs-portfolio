@@ -5,7 +5,9 @@ export interface IWork {
   details: RichTextBlock[];
   image: ImageField;
   skills: RichTextBlock[];
-  date: string | null;
+  date: TimelineDate;
   title: RichTextBlock[];
   slugs: string[];
 }
+
+export type TimelineDate = string | null;
