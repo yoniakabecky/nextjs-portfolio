@@ -15,8 +15,8 @@ export default function Information({
   const techStack = skills[0]?.text.split(",") ?? [];
 
   return (
-    <InfoRoot>
-      <Info>
+    <Root>
+      <Background>
         <Title>{title[0].text}</Title>
 
         <Description>{description[0].text}</Description>
@@ -35,12 +35,12 @@ export default function Information({
             </CTA>
           </Link>
         )}
-      </Info>
-    </InfoRoot>
+      </Background>
+    </Root>
   );
 }
 
-const InfoRoot = styled.div`
+const Root = styled.div`
   display: flex;
   position: absolute;
   top: 50%;
@@ -64,7 +64,7 @@ const InfoRoot = styled.div`
   }
 `;
 
-const Info = styled.div`
+const Background = styled.div`
   border-radius: 0.8rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);

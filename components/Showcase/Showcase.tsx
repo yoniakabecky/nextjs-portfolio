@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import React, { ReactElement } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
@@ -6,6 +6,11 @@ import size from "../../styles/breakpoints";
 import { IWork } from "../../types";
 import Information from "./Information";
 import Timeline from "./Timeline";
+
+const imgVariants: Variants = {
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, x: "-100%" },
+};
 
 export default function Showcase(data: IWork): ReactElement {
   const [ref, inView] = useInView({
@@ -20,9 +25,12 @@ export default function Showcase(data: IWork): ReactElement {
           <Information {...data} />
 
           <ImageWrapper>
-            <img
+            <motion.img
               src={data.image.url ?? undefined}
               alt={data.image.alt ?? undefined}
+              animate={inView ? "visible" : "hidden"}
+              exit={{ opacity: 0, x: "100%" }}
+              variants={imgVariants}
             />
           </ImageWrapper>
         </Relative>
@@ -86,10 +94,11 @@ const ImageWrapper = styled.div`
   height: 40rem;
 
   img {
-    width: auto;
+    width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     object-position: center;
+    filter: brightness(0.7);
   }
 
   @media ${size.xl} {
