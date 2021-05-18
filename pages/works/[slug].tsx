@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import HeroSection from "../../components/ProjectHeroSection";
 import { getDocumentsByType, getProjectByUid } from "../../lib/prismicio";
 import { IProject } from "../../types";
 
@@ -12,7 +13,8 @@ interface Props {
 export default function Project({ data }: Props): ReactElement {
   return (
     <Root>
-      <div>{RichText.render(data.hero[0].title)}</div>
+      <HeroSection {...data.hero[0]} />
+
       <div>
         <div>{RichText.render(data.about[0].title)}</div>
         <div>{RichText.render(data.about[0].description)}</div>

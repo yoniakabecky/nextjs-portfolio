@@ -98,7 +98,7 @@ const ImageWrapper = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.7);
+    filter: brightness(0.9);
   }
 
   @media ${size.xl} {
