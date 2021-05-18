@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import AboutSection from "../../components/ProjectAboutSection";
 import HeroSection from "../../components/ProjectHeroSection";
 import { getDocumentsByType, getProjectByUid } from "../../lib/prismicio";
 import { IProject } from "../../types";
@@ -15,10 +15,7 @@ export default function Project({ data }: Props): ReactElement {
     <Root>
       <HeroSection {...data.hero[0]} />
 
-      <div>
-        <div>{RichText.render(data.about[0].title)}</div>
-        <div>{RichText.render(data.about[0].description)}</div>
-      </div>
+      <AboutSection {...data.about[0]} />
     </Root>
   );
 }
@@ -49,6 +46,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Root = styled.main`
   min-width: 100vw;
   min-height: 100vh;
-  background-color: ${(props) => props.theme.colors.light};
+  background-color: white;
   color: ${(props) => props.theme.colors.dark};
 `;
