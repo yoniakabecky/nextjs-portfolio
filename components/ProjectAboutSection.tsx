@@ -1,6 +1,7 @@
 import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import displaySize from "../styles/breakpoints";
 import { IAboutSection } from "../types";
 
 interface Props extends IAboutSection {}
@@ -27,7 +28,6 @@ const Root = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding-top: 20rem; */
   min-height: 100vh;
 `;
 
@@ -41,6 +41,10 @@ const Paragraph = styled.div`
   margin-top: 3.2rem;
   max-width: 60rem;
   z-index: 1;
+
+  @media ${displaySize.xl} {
+    max-width: 50vw;
+  }
 `;
 
 const Image = styled.img`
@@ -52,4 +56,14 @@ const Image = styled.img`
   max-width: 50vw;
   height: 100%;
   max-height: 50vh;
+
+  @media ${displaySize.xl} {
+    margin-top: -10vw;
+  }
+
+  @media ${displaySize.sm} {
+    margin-right: unset;
+    align-self: center;
+    max-width: 80vw;
+  }
 `;

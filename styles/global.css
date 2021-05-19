@@ -19,12 +19,12 @@ body {
 
 h1 {
   font-weight: 600;
-  font-size: 6.5rem;
+  font-size: 7.6rem;
 }
 
 h2 {
   font-weight: 600;
-  font-size: 5.5rem;
+  font-size: 5.6rem;
 }
 
 p {
@@ -39,5 +39,50 @@ a {
 
 small {
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
+}
+
+@media (min-width: 1500px) {
+  h1 {
+    font-size: 5.25vw;
+  }
+  h2 {
+    font-size: 3.95vw;
+  }
+  p {
+    font-size: 1.25vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 6.7rem;
+  }
+  h2 {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 5.9rem;
+  }
+  h2 {
+    font-size: 4.4rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 4.2rem;
+  }
+  h2 {
+    font-size: 3.2rem;
+  }
 }

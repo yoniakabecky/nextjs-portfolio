@@ -2,6 +2,7 @@ import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import displaySize from "../styles/breakpoints";
 import { IHeroSection } from "../types";
 import ArrowForward from "./icons/ArrowForward";
 import Pill from "./Pill";
@@ -51,7 +52,19 @@ const BackBtn = styled.div`
 
   svg {
     transform: rotate(180deg);
+    width: 2.4rem;
+    height: 2.4rem;
     fill: ${(props) => props.theme.colors.dark};
+  }
+
+  @media ${displaySize.xl} {
+    top: 5vh;
+    left: 3vw;
+
+    svg {
+      width: 1.67vw;
+      height: 1.67vw;
+    }
   }
 `;
 
@@ -72,4 +85,8 @@ const Image = styled.img`
   height: 40rem;
   object-fit: cover;
   vertical-align: bottom;
+
+  @media ${displaySize.xl} {
+    height: 30vw;
+  }
 `;

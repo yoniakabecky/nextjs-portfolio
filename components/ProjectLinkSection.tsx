@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import displaySize from "../styles/breakpoints";
 import ArrowForward from "./icons/ArrowForward";
 import GitHubIcon from "./icons/GitHubIcon";
 import GlobeIcon from "./icons/GlobeIcon";
@@ -33,7 +34,7 @@ export default function ProjectLinkSection({
       </WebLinks>
 
       <ContactPageLink>
-        Liked my work?
+        Liked my work?{" "}
         <span>
           <Link href="/contact">Get in touch</Link>
           <ArrowForward />
@@ -45,6 +46,10 @@ export default function ProjectLinkSection({
 
 const Root = styled.section`
   padding: 12rem 0;
+
+  @media ${displaySize.xl} {
+    padding: 10vw 0;
+  }
 `;
 
 const WebLinks = styled.div`
@@ -72,7 +77,31 @@ const LinkWrapper = styled.a`
   span {
     margin-top: 0.8rem;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 2.4rem;
+  }
+
+  @media ${displaySize.xl} {
+    width: 15vw;
+
+    svg {
+      width: 3vw;
+      height: 3vw;
+    }
+    span {
+      font-size: 1.67vw;
+    }
+  }
+
+  @media ${displaySize.sm} {
+    margin-right: unset;
+
+    svg {
+      width: 3.3rem;
+      height: 3.3rem;
+    }
+    span {
+      font-size: 1.8rem;
+    }
   }
 `;
 
@@ -84,11 +113,22 @@ const ContactPageLink = styled.p`
     margin-left: 1rem;
     color: ${(props) => props.theme.colors.tomato};
   }
+
   svg {
     margin-bottom: -0.4rem;
     margin-left: 0.4rem;
     width: 2rem;
     height: 2rem;
     fill: ${(props) => props.theme.colors.tomato};
+  }
+
+  @media ${displaySize.xl} {
+    margin-top: 10vw;
+
+    svg {
+      margin-bottom: -0.4vw;
+      width: 1.7vw;
+      height: 1.7vw;
+    }
   }
 `;
