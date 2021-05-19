@@ -1,5 +1,5 @@
 import Prismic from "@prismicio/client";
-import { IWork } from "../types";
+import { IProject, IWork } from "../types";
 
 const apiEndpoint = process.env.PRISMICIO_API_ENDPOINT!;
 const accessToken = process.env.PRISMICIO_ACCESS_TOKEN;
@@ -21,11 +21,9 @@ const createClientOptions = (req = null, prismicAccessToken: any = null) => {
 };
 
 export const getAllWorksData = async () => {
-  const res = await Client().query(
-    Prismic.Predicates.at("document.type", "works")
-  );
+  const res = await getDocumentsByType("works");
 
-  const data: IWork[] = res.results.map(({ slugs, data }) => ({
+  const data: IWork[] = res.map(({ slugs, data }) => ({
     slugs,
     ...data,
   }));
@@ -35,4 +33,18 @@ export const getAllWorksData = async () => {
   );
 
   return sorted;
+};
+
+export const getDocumentsByType = async (type: string) => {
+  const res = await Client().query(
+    Prismic.Predicates.at("document.type", type)
+  );
+
+  return res.results;
+};
+
+export const getProjectByUid = async (uid: string) => {
+  const res = await Client().getByUID("projects", uid, {});
+
+  return res.data as IProject;
 };

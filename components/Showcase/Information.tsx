@@ -4,6 +4,7 @@ import styled from "styled-components";
 import size from "../../styles/breakpoints";
 import { IWork } from "../../types";
 import ArrowForward from "../icons/ArrowForward";
+import Pill from "../Pill";
 
 export default function Information({
   title,
@@ -12,7 +13,7 @@ export default function Information({
   details,
   slugs,
 }: IWork): ReactElement {
-  const techStack = skills[0]?.text.split(",") ?? [];
+  const techStack = skills[0]?.text?.split(",") ?? [];
 
   return (
     <Root>
@@ -23,7 +24,7 @@ export default function Information({
 
         <Stacks>
           {techStack.map((stack, i) => (
-            <Stack key={`stack-${i}`}>{stack}</Stack>
+            <Pill text={stack} size="small" key={`stack-${i}`} />
           ))}
         </Stacks>
 
@@ -113,29 +114,6 @@ const Description = styled.p`
 const Stacks = styled.div`
   display: flex;
   flex-wrap: wrap;
-`;
-
-const Stack = styled.small`
-  display: inline-block;
-  border-radius: 3rem;
-  margin: 0 0.4rem;
-  background-color: ${(props) => props.theme.colors.dark};
-  padding: 0.5rem 1.2rem 0.3rem;
-  font-weight: 300;
-  line-height: 130%;
-
-  :first-child {
-    margin-left: 0;
-  }
-
-  @media ${size.xl} {
-    padding: 0.7rem 2rem 0.3rem;
-    font-size: 0.9vw;
-  }
-  @media ${size.xs} {
-    margin: 0.4rem;
-    font-size: 1.2rem;
-  }
 `;
 
 const CTA = styled.div`
