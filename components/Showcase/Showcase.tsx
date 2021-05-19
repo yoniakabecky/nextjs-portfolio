@@ -2,8 +2,8 @@ import { motion, Variants } from "framer-motion";
 import React, { ReactElement } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
-import size from "../../styles/breakpoints";
-import { IWork } from "../../types";
+import size from "@@/styles/breakpoints";
+import { IWork } from "@@/types";
 import Information from "./Information";
 import Timeline from "./Timeline";
 

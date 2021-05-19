@@ -2,8 +2,8 @@ import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import displaySize from "../styles/breakpoints";
-import { IHeroSection } from "../types";
+import displaySize from "@@/styles/breakpoints";
+import { IHeroSection } from "@@/types";
 import ArrowForward from "./icons/ArrowForward";
 import Pill from "./Pill";
 

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import size from "../styles/breakpoints";
+import size from "@@/styles/breakpoints";
 import SocialIcons from "./SocialIcons";
 
 export default function TopPageContent(): ReactElement {

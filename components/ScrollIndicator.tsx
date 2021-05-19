@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import size from "../styles/breakpoints";
+import size from "@@/styles/breakpoints";
 
 interface Props {
   hide?: boolean;

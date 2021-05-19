@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import size from "../../styles/breakpoints";
-import { TimelineDate } from "../../types";
+import size from "@@/styles/breakpoints";
+import { TimelineDate } from "@@/types";
 
 interface Props {
   date: TimelineDate;

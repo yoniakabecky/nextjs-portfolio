@@ -1,5 +1,5 @@
 import Prismic from "@prismicio/client";
-import { IProject, IWork } from "../types";
+import { IProject, IWork } from "@@/types";
 
 const apiEndpoint = process.env.PRISMICIO_API_ENDPOINT!;
 const accessToken = process.env.PRISMICIO_ACCESS_TOKEN;

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import size from "../../styles/breakpoints";
-import { IWork } from "../../types";
+import size from "@@/styles/breakpoints";
+import { IWork } from "@@/types";
 import ArrowForward from "../icons/ArrowForward";
 import Pill from "../Pill";
 

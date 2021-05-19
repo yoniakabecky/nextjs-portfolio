@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import displaySize from "../styles/breakpoints";
+import displaySize from "@@/styles/breakpoints";
 
 interface Props {
   text?: string;

@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import AboutSection from "../../components/ProjectAboutSection";
-import HeroSection from "../../components/ProjectHeroSection";
-import LinkSection from "../../components/ProjectLinkSection";
-import { getDocumentsByType, getProjectByUid } from "../../lib/prismicio";
-import { IProject } from "../../types";
+import AboutSection from "@@/components/ProjectAboutSection";
+import HeroSection from "@@/components/ProjectHeroSection";
+import LinkSection from "@@/components/ProjectLinkSection";
+import { getDocumentsByType, getProjectByUid } from "@@/lib/prismicio";
+import { IProject } from "@@/types";
 
 interface Props {
   data: IProject;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import displaySize from "../styles/breakpoints";
+import displaySize from "@@/styles/breakpoints";
 import ArrowForward from "./icons/ArrowForward";
 import GitHubIcon from "./icons/GitHubIcon";
 import GlobeIcon from "./icons/GlobeIcon";
