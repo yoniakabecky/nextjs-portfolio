@@ -20,3 +20,18 @@ export interface FilledLinkToWebField {
   url: string;
   target?: string;
 }
+
+export interface FilledLinkToDocumentField<
+  TypeEnum = string,
+  LangEnum = string
+> {
+  link_type: "Document";
+  id: string;
+  uid?: string;
+  type: TypeEnum;
+  tags: string[];
+  lang: LangEnum;
+  url?: string;
+  slug?: string;
+  isBroken?: boolean;
+}
