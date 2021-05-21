@@ -11,7 +11,7 @@ export default function Information({
   description,
   skills,
   details,
-  slugs,
+  detail_page,
 }: IWork): ReactElement {
   const techStack = skills[0]?.text?.split(",") ?? [];
 
@@ -29,7 +29,7 @@ export default function Information({
         </Stacks>
 
         {details && (
-          <Link href={`/works/${slugs[0]}`}>
+          <Link href={`/works/${detail_page.uid}`}>
             <CTA>
               <p>See details</p>
               <ArrowForward />
