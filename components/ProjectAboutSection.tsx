@@ -27,8 +27,7 @@ const Root = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
+  margin: 20rem auto 10rem;
 `;
 
 const Text = styled.div`
