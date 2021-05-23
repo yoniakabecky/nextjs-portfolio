@@ -14,6 +14,7 @@ export interface IWork {
 export type TimelineDate = string | null;
 
 export interface IProject {
+  meta: DefaultGroup[];
   hero: IHeroSection[];
   about: IAboutSection[];
   demo: FilledLinkToWebField;
@@ -23,6 +24,12 @@ export interface IProject {
 export interface IHeroSection {
   title: RichTextBlock[];
   skills: RichTextBlock[];
+  image: ImageField;
+}
+
+export interface DefaultGroup {
+  title: RichTextBlock[];
+  description: RichTextBlock[];
   image: ImageField;
 }
 

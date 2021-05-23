@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import BasicMeta from "@@/components/meta/BasicMeta";
 import Navigation from "@@/components/Navigation";
 import ScrollIndicator from "@@/components/ScrollIndicator";
 import Showcase from "@@/components/Showcase";
@@ -38,6 +39,8 @@ export default function Works({ data }: Props) {
 
   return (
     <>
+      <BasicMeta title="My Works 👩‍💻" />
+
       <Navigation contact />
 
       <ShowcaseWrapper id="showcases">
