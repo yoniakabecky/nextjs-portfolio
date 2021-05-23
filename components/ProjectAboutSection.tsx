@@ -1,8 +1,8 @@
 import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import displaySize from "../styles/breakpoints";
-import { IAboutSection } from "../types";
+import displaySize from "@@/styles/breakpoints";
+import { IAboutSection } from "@@/types";
 
 interface Props extends IAboutSection {}
 

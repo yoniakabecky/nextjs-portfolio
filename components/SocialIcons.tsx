@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import size from "../styles/breakpoints";
+import size from "@@/styles/breakpoints";
 import EmailIcon from "./icons/EmailIcon";
 import GitHubIcon from "./icons/GitHubIcon";
 import InstagramIcon from "./icons/InstagramIcon";

@@ -1,6 +1,7 @@
 {
-  "name": "with-typescript-styled-components",
-  "version": "1.0.0",
+  "name": "yoniakabecky.com",
+  "private": true,
+  "description": "Yoni's portfolio site. Build with next.js and prismic.io.",
   "scripts": {
     "dev": "next",
     "build": "next build",

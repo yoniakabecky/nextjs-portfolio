@@ -8,7 +8,7 @@ interface Props {
 export default function BasicMeta({ title, description }: Props) {
   return (
     <Head>
-      <title>{title ?? "Yoni Aoki - A Front-end Developer"}</title>
+      <title>Yoni Aoki - {title ?? "A Front-end Developer"}</title>
 
       <meta
         name="description"

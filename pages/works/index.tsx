@@ -1,12 +1,13 @@
 import { GetStaticProps } from "next";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import Navigation from "../../components/Navigation";
-import ScrollIndicator from "../../components/ScrollIndicator";
-import Showcase from "../../components/Showcase";
-import { getAllWorksData } from "../../lib/prismicio";
-import size from "../../styles/breakpoints";
-import { IWork } from "../../types";
+import BasicMeta from "@@/components/meta/BasicMeta";
+import Navigation from "@@/components/Navigation";
+import ScrollIndicator from "@@/components/ScrollIndicator";
+import Showcase from "@@/components/Showcase";
+import { getAllWorksData } from "@@/lib/prismicio";
+import size from "@@/styles/breakpoints";
+import { IWork } from "@@/types";
 
 interface Props {
   data: IWork[];
@@ -38,6 +39,8 @@ export default function Works({ data }: Props) {
 
   return (
     <>
+      <BasicMeta title="My Works 👩‍💻" />
+
       <Navigation contact />
 
       <ShowcaseWrapper id="showcases">
