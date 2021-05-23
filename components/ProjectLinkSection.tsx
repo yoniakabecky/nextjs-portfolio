@@ -2,13 +2,14 @@ import Link from "next/link";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import displaySize from "@@/styles/breakpoints";
+import { FilledLinkToWebField } from "@@/types/prismic-types";
 import ArrowForward from "./icons/ArrowForward";
 import GitHubIcon from "./icons/GitHubIcon";
 import GlobeIcon from "./icons/GlobeIcon";
 
 interface Props {
-  github?: any;
-  demo?: any;
+  github: FilledLinkToWebField;
+  demo: FilledLinkToWebField;
 }
 
 export default function ProjectLinkSection({
@@ -18,14 +19,14 @@ export default function ProjectLinkSection({
   return (
     <Root>
       <WebLinks>
-        {demo && (
+        {demo.link_type === "Web" && (
           <LinkWrapper href={demo.url} target={demo.target}>
             <GlobeIcon />
             <span>Live demo</span>
           </LinkWrapper>
         )}
 
-        {github && (
+        {github.link_type === "Web" && (
           <LinkWrapper href={github.url} target={github.target}>
             <GitHubIcon />
             <span>Source code</span>

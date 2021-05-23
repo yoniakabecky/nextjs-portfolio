@@ -23,8 +23,7 @@ const createClientOptions = (req = null, prismicAccessToken: any = null) => {
 export const getAllWorksData = async () => {
   const res = await getDocumentsByType("works");
 
-  const data: IWork[] = res.map(({ slugs, data }) => ({
-    slugs,
+  const data: IWork[] = res.map(({ data }) => ({
     ...data,
   }));
 

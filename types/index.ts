@@ -1,5 +1,9 @@
 import { RichTextBlock } from "prismic-reactjs";
-import { FilledLinkToWebField, ImageField } from "./prismic-types";
+import {
+  FilledLinkToDocumentField,
+  FilledLinkToWebField,
+  ImageField,
+} from "./prismic-types";
 
 export interface IWork {
   description: RichTextBlock[];
@@ -8,7 +12,7 @@ export interface IWork {
   skills: RichTextBlock[];
   date: TimelineDate;
   title: RichTextBlock[];
-  slugs: string[];
+  detail_page: FilledLinkToDocumentField;
 }
 
 export type TimelineDate = string | null;
