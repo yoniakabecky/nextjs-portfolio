@@ -21,6 +21,7 @@ export interface IProject {
   meta: DefaultGroup[];
   hero: DefaultGroup[];
   about: DefaultGroup[];
+  challenge: IChallenge[];
   demo: FilledLinkToWebField;
   github: FilledLinkToWebField;
 }
@@ -31,4 +32,6 @@ export interface DefaultGroup {
   image: ImageField;
 }
 
+export interface IChallenge extends DefaultGroup {
+  mask_image: BooleanField;
 }

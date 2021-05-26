@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import AboutSection from "@@/components/ProjectAboutSection";
+import ChallengeSection from "@@/components/ProjectChallengeSection";
 import HeroSection from "@@/components/ProjectHeroSection";
 import LinkSection from "@@/components/ProjectLinkSection";
 import { getDocumentsByType, getProjectByUid } from "@@/lib/prismicio";
@@ -17,6 +18,8 @@ export default function Project({ data }: Props): ReactElement {
       <HeroSection {...data.hero[0]} />
 
       <AboutSection {...data.about[0]} />
+
+      <ChallengeSection {...data.challenge[0]} />
 
       <LinkSection demo={data.demo} github={data.github} />
     </Root>
