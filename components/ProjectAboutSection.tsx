@@ -2,15 +2,13 @@ import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import displaySize from "@@/styles/breakpoints";
-import { IAboutSection } from "@@/types";
-
-interface Props extends IAboutSection {}
+import { DefaultGroup } from "@@/types";
 
 export default function ProjectAboutSection({
   title,
   description,
-  logo,
-}: Props): ReactElement {
+  image: logo,
+}: DefaultGroup): ReactElement {
   return (
     <Root>
       <Text>
@@ -28,6 +26,10 @@ const Root = styled.section`
   display: flex;
   flex-direction: column;
   margin: 20rem auto 10rem;
+
+  @media ${displaySize.xl} {
+    margin: 20vw auto 10vw;
+  }
 `;
 
 const Text = styled.div`

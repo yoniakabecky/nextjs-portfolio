@@ -8,6 +8,10 @@ export interface ImageField {
   [key: string]: unknown;
 }
 
+export type DateField = string | null;
+
+export type BooleanField = boolean;
+
 export enum LinkType {
   Any = "Any",
   Document = "Document",

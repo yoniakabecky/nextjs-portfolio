@@ -1,5 +1,7 @@
 import { RichTextBlock } from "prismic-reactjs";
 import {
+  BooleanField,
+  DateField,
   FilledLinkToDocumentField,
   FilledLinkToWebField,
   ImageField,
@@ -7,28 +9,20 @@ import {
 
 export interface IWork {
   description: RichTextBlock[];
-  details: RichTextBlock[];
+  details: BooleanField;
   image: ImageField;
   skills: RichTextBlock[];
-  date: TimelineDate;
+  date: DateField;
   title: RichTextBlock[];
   detail_page: FilledLinkToDocumentField;
 }
 
-export type TimelineDate = string | null;
-
 export interface IProject {
   meta: DefaultGroup[];
-  hero: IHeroSection[];
-  about: IAboutSection[];
+  hero: DefaultGroup[];
+  about: DefaultGroup[];
   demo: FilledLinkToWebField;
   github: FilledLinkToWebField;
-}
-
-export interface IHeroSection {
-  title: RichTextBlock[];
-  skills: RichTextBlock[];
-  image: ImageField;
 }
 
 export interface DefaultGroup {
@@ -37,8 +31,4 @@ export interface DefaultGroup {
   image: ImageField;
 }
 
-export interface IAboutSection {
-  title: RichTextBlock[];
-  description: RichTextBlock[];
-  logo: ImageField;
 }
