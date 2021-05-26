@@ -1,6 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import BasicMeta from "@@/components/meta/BasicMeta";
 import AboutSection from "@@/components/ProjectAboutSection";
 import ChallengeSection from "@@/components/ProjectChallengeSection";
 import HeroSection from "@@/components/ProjectHeroSection";
@@ -13,8 +15,13 @@ interface Props {
 }
 
 export default function Project({ data }: Props): ReactElement {
+  const metaTitle = RichText.asText(data.meta[0].title);
+  const metaDescription = RichText.asText(data.meta[0].description);
+
   return (
     <Root>
+      <BasicMeta title={metaTitle} description={metaDescription} />
+
       <HeroSection {...data.hero[0]} />
 
       <AboutSection {...data.about[0]} />
