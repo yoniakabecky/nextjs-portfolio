@@ -32,7 +32,7 @@ const Root = styled.small<RootProps>`
 
   @media ${displaySize.xl} {
     padding: ${({ size }) =>
-      size === "small" ? "0.7rem 2rem 0.3rem" : "1.6rem 2.4rem 0.8rem"};
+      size === "small" ? "0.7rem 2rem 0.3rem" : "1.6rem 2.4rem 1rem"};
     font-size: ${({ size }) => (size === "small" ? "0.94vw" : "1.25vw")};
   }
   @media ${displaySize.md} {

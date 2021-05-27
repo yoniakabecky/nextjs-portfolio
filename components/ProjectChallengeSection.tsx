@@ -5,7 +5,7 @@ import displaySize from "@@/styles/breakpoints";
 import { IChallenge } from "@@/types";
 
 interface WrapperProps {
-  mask: boolean;
+  maskImage: boolean;
 }
 
 export default function ProjectChallengeSection({
@@ -21,7 +21,7 @@ export default function ProjectChallengeSection({
         <Paragraph>{RichText.render(description)}</Paragraph>
       </Text>
 
-      <ImageWrapper mask={mask_image}>
+      <ImageWrapper maskImage={mask_image}>
         <Image src={image.url ?? undefined} alt={image.alt ?? undefined} />
       </ImageWrapper>
     </Root>
@@ -65,18 +65,18 @@ const Paragraph = styled.div`
 `;
 
 const ImageWrapper = styled.div<WrapperProps>`
-  margin-top: ${(props) => (props.mask ? "unset" : "-15rem")};
+  margin-top: ${(props) => (props.maskImage ? "unset" : "-15rem")};
   width: 100%;
-  height: ${(props) => (props.mask ? "45rem" : "auto")};
+  height: ${(props) => (props.maskImage ? "45rem" : "auto")};
 
   @media ${displaySize.xl} {
-    margin-top: ${(props) => (props.mask ? "unset" : "-10vw")};
-    height: ${(props) => (props.mask ? "40vw" : "auto")};
+    margin-top: ${(props) => (props.maskImage ? "unset" : "-10vw")};
+    height: ${(props) => (props.maskImage ? "40vw" : "auto")};
   }
 
   @media ${displaySize.sm} {
     margin-top: -5vh;
-    height: ${(props) => (props.mask ? "40vw" : "auto")};
+    height: ${(props) => (props.maskImage ? "40vw" : "auto")};
   }
 `;
 
