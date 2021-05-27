@@ -3,17 +3,15 @@ import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import displaySize from "@@/styles/breakpoints";
-import { IHeroSection } from "@@/types";
+import { DefaultGroup } from "@@/types";
 import ArrowForward from "./icons/ArrowForward";
 import Pill from "./Pill";
-
-interface Props extends IHeroSection {}
 
 export default function HeroSection({
   title,
   image,
-  skills,
-}: Props): ReactElement {
+  description: skills,
+}: DefaultGroup): ReactElement {
   return (
     <Root>
       <Link href="/works">
