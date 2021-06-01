@@ -35,9 +35,11 @@ const Root = styled.section`
   @media ${displaySize.xl} {
     height: 30vw;
   }
+
   @media ${displaySize.md} {
     height: 40vw;
   }
+
   @media ${displaySize.xs} {
     flex-direction: column;
     justify-content: space-evenly;
@@ -53,9 +55,11 @@ const NextProjectTitle = styled.p`
   @media ${displaySize.xl} {
     font-size: 1.67vw;
   }
+
   @media ${displaySize.md} {
     font-size: 1.6rem;
   }
+
   @media ${displaySize.xs} {
     font-size: 1.4rem;
   }
@@ -77,6 +81,7 @@ const Image = styled.img`
     width: 50vw;
     height: 30vw;
   }
+
   @media ${displaySize.xs} {
     width: 80vw;
     height: auto;
