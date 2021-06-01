@@ -53,9 +53,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (params?.slug) {
     const data = await getProjectByUid(params.slug as string);
 
-    if (data.next) {
+    if ("uid" in data.next) {
       const nextProject = await getProjectByUid(data.next.uid as string);
-      data.nextProject = nextProject.hero[0];
+      data.nextProject = { uid: data.next.uid!, ...nextProject.hero[0] };
     }
 
     return {

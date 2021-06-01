@@ -1,22 +1,26 @@
+import Link from "next/link";
 import React, { ReactElement } from "react";
 import { RichText } from "prismic-reactjs";
 import styled from "styled-components";
 import displaySize from "@@/styles/breakpoints";
-import { DefaultGroup } from "@@/types";
+import { NextProject } from "@@/types";
 
 export default function NextSection({
   title,
   image,
-}: DefaultGroup): ReactElement {
+  uid,
+}: NextProject): ReactElement {
   return (
-    <Root>
-      <div>
-        <h3>Next Project</h3>
-        <NextProjectTitle>{RichText.asText(title)}</NextProjectTitle>
-      </div>
+    <Link href={`/works/${uid}`}>
+      <Root>
+        <div>
+          <h3>Next Project</h3>
+          <NextProjectTitle>{RichText.asText(title)}</NextProjectTitle>
+        </div>
 
-      <Image src={image.url ?? undefined} alt={image.alt ?? undefined} />
-    </Root>
+        <Image src={image.url ?? undefined} alt={image.alt ?? undefined} />
+      </Root>
+    </Link>
   );
 }
 
