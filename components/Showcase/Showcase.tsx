@@ -18,8 +18,6 @@ export default function Showcase(data: IWork): ReactElement {
     rootMargin: "-15% 0px",
   });
 
-  console.log(data);
-
   return (
     <Root ref={ref} style={{ opacity: inView ? 1 : 0 }}>
       <Centered>
