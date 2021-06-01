@@ -24,6 +24,8 @@ export interface IProject {
   challenge: IChallenge[];
   demo: FilledLinkToWebField;
   github: FilledLinkToWebField;
+  next: FilledLinkToDocumentField;
+  nextProject?: NextProject;
 }
 
 export interface DefaultGroup {
@@ -34,4 +36,8 @@ export interface DefaultGroup {
 
 export interface IChallenge extends DefaultGroup {
   mask_image: BooleanField;
+}
+
+export interface NextProject extends DefaultGroup {
+  uid: string;
 }

@@ -3,10 +3,11 @@ import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import BasicMeta from "@@/components/meta/BasicMeta";
-import AboutSection from "@@/components/ProjectAboutSection";
-import ChallengeSection from "@@/components/ProjectChallengeSection";
-import HeroSection from "@@/components/ProjectHeroSection";
-import LinkSection from "@@/components/ProjectLinkSection";
+import AboutSection from "@@/components/Project/AboutSection";
+import ChallengeSection from "@@/components/Project/ChallengeSection";
+import HeroSection from "@@/components/Project/HeroSection";
+import LinkSection from "@@/components/Project/LinkSection";
+import NextSection from "@@/components/Project/NextSection";
 import { getDocumentsByType, getProjectByUid } from "@@/lib/prismicio";
 import { IProject } from "@@/types";
 
@@ -29,6 +30,12 @@ export default function Project({ data }: Props): ReactElement {
       <ChallengeSection {...data.challenge[0]} />
 
       <LinkSection demo={data.demo} github={data.github} />
+
+      <p style={{ margin: "2rem auto", textAlign: "center" }}>
+        This page is a work in progress. More details will be updated soon.
+      </p>
+
+      {data.nextProject && <NextSection {...data.nextProject} />}
     </Root>
   );
 }
@@ -45,6 +52,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (params?.slug) {
     const data = await getProjectByUid(params.slug as string);
+
+    if ("uid" in data.next) {
+      const nextProject = await getProjectByUid(data.next.uid as string);
+      data.nextProject = { uid: data.next.uid!, ...nextProject.hero[0] };
+    }
 
     return {
       props: { data },
