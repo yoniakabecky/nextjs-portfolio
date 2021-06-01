@@ -24,6 +24,8 @@ export interface IProject {
   challenge: IChallenge[];
   demo: FilledLinkToWebField;
   github: FilledLinkToWebField;
+  next: FilledLinkToDocumentField;
+  nextProject?: DefaultGroup;
 }
 
 export interface DefaultGroup {
