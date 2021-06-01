@@ -10,7 +10,7 @@ interface WrapperProps {
   maskImage: boolean;
 }
 
-export default function ProjectChallengeSection({
+export default function ChallengeSection({
   title,
   description,
   image,

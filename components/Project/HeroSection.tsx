@@ -4,8 +4,8 @@ import React, { ReactElement } from "react";
 import styled from "styled-components";
 import displaySize from "@@/styles/breakpoints";
 import { DefaultGroup } from "@@/types";
-import ArrowForward from "./icons/ArrowForward";
-import Pill from "./Pill";
+import ArrowForward from "../icons/ArrowForward";
+import Pill from "../Pill";
 
 export default function HeroSection({
   title,

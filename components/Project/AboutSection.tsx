@@ -6,7 +6,7 @@ import styled from "styled-components";
 import displaySize from "@@/styles/breakpoints";
 import { DefaultGroup } from "@@/types";
 
-export default function ProjectAboutSection({
+export default function AboutSection({
   title,
   description,
   image: logo,
