@@ -1,10 +1,10 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import size from "@@/styles/breakpoints";
-import { TimelineDate } from "@@/types";
+import { DateField } from "@@/types/prismic-types";
 
 interface Props {
-  date: TimelineDate;
+  date: DateField;
 }
 
 export default function Timeline({ date }: Props): ReactElement {
