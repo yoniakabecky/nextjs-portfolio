@@ -3,11 +3,13 @@ import { RichText } from "prismic-reactjs";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import BasicMeta from "@@/components/meta/BasicMeta";
-import AboutSection from "@@/components/Project/AboutSection";
-import ChallengeSection from "@@/components/Project/ChallengeSection";
-import HeroSection from "@@/components/Project/HeroSection";
-import LinkSection from "@@/components/Project/LinkSection";
-import NextSection from "@@/components/Project/NextSection";
+import {
+  AboutSection,
+  ChallengeSection,
+  HeroSection,
+  LinkSection,
+  NextSection,
+} from "@@/components/Project";
 import { getDocumentsByType, getProjectByUid } from "@@/lib/prismicio";
 import { IProject } from "@@/types";
 
