@@ -11,17 +11,17 @@ export default function AboutSection({
   description,
   image: logo,
 }: DefaultGroup): ReactElement {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ threshold: 0.2 });
 
   return (
     <Root
       ref={ref}
       initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : { opacity: 0 }}
+      animate={{ opacity: inView ? 1 : 0 }}
     >
       <Text
-        initial={{ x: -400 }}
-        animate={inView ? { x: 0 } : { x: -400 }}
+        initial={{ x: "-10vw" }}
+        animate={{ x: inView ? 0 : "-10vw" }}
         transition={{ duration: 0.5 }}
       >
         <div>{RichText.render(title)}</div>
@@ -31,8 +31,8 @@ export default function AboutSection({
       <Image
         src={logo.url ?? undefined}
         alt={logo.alt ?? undefined}
-        initial={{ x: 400, opacity: 0 }}
-        animate={inView ? { x: 0, opacity: 1 } : { x: 400, opacity: 0 }}
+        initial={{ x: "10vw" }}
+        animate={{ x: inView ? 0 : "10vw" }}
         transition={{
           duration: 0.3,
           delay: 0.2,

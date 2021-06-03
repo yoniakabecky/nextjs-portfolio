@@ -16,29 +16,24 @@ export default function ChallengeSection({
   image,
   mask_image,
 }: IChallenge): ReactElement {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ threshold: 0.2 });
 
   return (
     <Root
       ref={ref}
       initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : { opacity: 0 }}
+      animate={{ opacity: inView ? 1 : 0 }}
     >
       <Text
-        initial={{ x: 400 }}
-        animate={inView ? { x: 0 } : { x: 400 }}
+        initial={{ x: "10vw" }}
+        animate={{ x: inView ? 0 : "10vw" }}
         transition={{ duration: 0.5 }}
       >
         <div>{RichText.render(title)}</div>
         <Paragraph>{RichText.render(description)}</Paragraph>
       </Text>
 
-      <ImageWrapper
-        maskImage={mask_image}
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-      >
+      <ImageWrapper maskImage={mask_image}>
         <Image src={image.url ?? undefined} alt={image.alt ?? undefined} />
       </ImageWrapper>
     </Root>
@@ -81,7 +76,7 @@ const Paragraph = styled.div`
   }
 `;
 
-const ImageWrapper = styled(motion.div)<WrapperProps>`
+const ImageWrapper = styled.div<WrapperProps>`
   margin-top: ${(props) => (props.maskImage ? "unset" : "-15rem")};
   width: 100%;
   height: ${(props) => (props.maskImage ? "45rem" : "auto")};
