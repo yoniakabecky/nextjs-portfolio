@@ -114,5 +114,9 @@ const ImageWrapper = styled.div`
   }
   @media ${size.xs} {
     width: 90%;
+
+    img {
+      object-fit: contain;
+    }
   }
 `;
