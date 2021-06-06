@@ -1,5 +1,6 @@
 import { RichTextBlock } from "prismic-reactjs";
 import {
+  AnyRegularField,
   BooleanField,
   DateField,
   FilledLinkToDocumentField,
@@ -26,6 +27,7 @@ export interface IProject {
   github: FilledLinkToWebField;
   next: FilledLinkToDocumentField;
   nextProject?: NextProject;
+  body: SliceZone;
 }
 
 export interface DefaultGroup {
@@ -41,3 +43,27 @@ export interface IChallenge extends DefaultGroup {
 export interface NextProject extends DefaultGroup {
   uid: string;
 }
+
+export enum ProjectSliceType {
+  Style = "style",
+  Font = "font",
+  Color = "color",
+  Stack = "tech_stacks",
+}
+
+export interface Slice<
+  SliceType = ProjectSliceType,
+  PrimaryFields extends { [key: string]: AnyRegularField } = {
+    [key: string]: AnyRegularField;
+  },
+  ItemsFields extends { [key: string]: AnyRegularField } = {
+    [key: string]: AnyRegularField;
+  }
+> {
+  slice_type: SliceType;
+  slice_label: string | null;
+  primary: PrimaryFields;
+  items: ItemsFields[];
+}
+
+export type SliceZone<Slices extends Slice = Slice> = Slices[];
