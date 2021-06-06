@@ -11,7 +11,6 @@ interface ColorProps {
 }
 
 export default function ColorStyle({ colors }: Props): ReactElement {
-  console.log(colors);
   return (
     <Root>
       {colors.map(({ color }, i: number) => (
@@ -27,13 +26,18 @@ export default function ColorStyle({ colors }: Props): ReactElement {
 
 const Root = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin: 10rem auto;
   padding: 0 10vw;
 `;
 
 const ColorSquare = styled.div<ColorProps>`
+  margin: 1rem;
+  border: ${(props) =>
+    props.color === "#ffffff"
+      ? `solid 1px ${props.theme.colors.dark}`
+      : "unset"};
   border-radius: 1rem;
   background-color: ${(props) => props.color};
   width: 12rem;
@@ -42,6 +46,10 @@ const ColorSquare = styled.div<ColorProps>`
   @media ${displaySize.xl} {
     width: 8.4vw;
     height: 7vw;
+  }
+
+  @media ${displaySize.xs} {
+    margin: unset;
   }
 `;
 

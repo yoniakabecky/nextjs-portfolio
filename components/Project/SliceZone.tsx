@@ -1,6 +1,7 @@
 import { SliceZone as SliceZoneType, ProjectSliceType } from "@@/types";
 import { ReactElement } from "react";
 import { ColorStyle, FontStyle, StyleDescription } from "./Styles";
+import TechStackSection from "./TechStackSection";
 
 interface Props {
   sliceZone: SliceZoneType;
@@ -21,7 +22,7 @@ export default function SliceZone({ sliceZone }: Props): ReactElement {
             return <ColorStyle key={`slice-${i}`} colors={slice.items} />;
 
           case ProjectSliceType.Stack:
-            return <p key={`slice-${i}`}>Tech Stack</p>;
+            return <TechStackSection key={`slice-${i}`} stacks={slice.items} />;
 
           default:
             return null;
