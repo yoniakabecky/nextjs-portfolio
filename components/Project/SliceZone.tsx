@@ -1,6 +1,6 @@
 import { SliceZone as SliceZoneType, ProjectSliceType } from "@@/types";
 import { ReactElement } from "react";
-import { FontStyle } from "./Styles";
+import { ColorStyle, FontStyle, StyleDescription } from "./Styles";
 
 interface Props {
   sliceZone: SliceZoneType;
@@ -12,16 +12,16 @@ export default function SliceZone({ sliceZone }: Props): ReactElement {
       {sliceZone.map((slice, i) => {
         switch (slice.slice_type) {
           case ProjectSliceType.Style:
-            return <h2 key={i}>Visual Style</h2>;
+            return <StyleDescription key={`slice-${i}`} data={slice.primary} />;
 
           case ProjectSliceType.Font:
-            return <FontStyle key={i} fonts={slice.items} />;
+            return <FontStyle key={`slice-${i}`} fonts={slice.items} />;
 
           case ProjectSliceType.Color:
-            return <p key={i}>colors</p>;
+            return <ColorStyle key={`slice-${i}`} colors={slice.items} />;
 
           case ProjectSliceType.Stack:
-            return <p key={i}>Tech Stack</p>;
+            return <p key={`slice-${i}`}>Tech Stack</p>;
 
           default:
             return null;

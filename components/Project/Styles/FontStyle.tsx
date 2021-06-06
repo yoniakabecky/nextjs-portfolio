@@ -1,7 +1,8 @@
 import { RichText, RichTextBlock } from "prismic-reactjs";
 import React, { ReactElement } from "react";
-import { BooleanField, ImageField } from "@@/types/prismic-types";
 import styled from "styled-components";
+import displaySize from "@@/styles/breakpoints";
+import { BooleanField, ImageField } from "@@/types/prismic-types";
 
 interface FontSlice {
   font_bg: string;
@@ -38,7 +39,7 @@ const Font = ({ font_bg, font_img, font_name, darker_bg }: FontSlice) => (
       <img src={font_img.url ?? undefined} alt={font_img.alt ?? undefined} />
     </ImageWrapper>
 
-    <Divider darkBg={darker_bg} />
+    <Line darkBg={darker_bg} />
 
     <FontName darkBg={darker_bg}>{RichText.render(font_name)}</FontName>
   </FontRoot>
@@ -46,15 +47,37 @@ const Font = ({ font_bg, font_img, font_name, darker_bg }: FontSlice) => (
 
 const Root = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5rem auto;
+  padding: 0 10vw;
+
+  @media ${displaySize.xs} {
+    flex-direction: column;
+  }
 `;
 
 const FontRoot = styled.div<FontRootProps>`
   position: relative;
   border-radius: 1rem;
   background-color: ${(props) => props.color};
+  width: 35vw;
   min-width: 40rem;
   height: 30rem;
+
+  @media ${displaySize.xl} {
+    height: 15vw;
+  }
+
+  @media ${displaySize.sm} {
+    min-width: unset;
+  }
+
+  @media ${displaySize.xs} {
+    margin-bottom: 5rem;
+    width: 80vw;
+    height: 25rem;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -63,9 +86,15 @@ const ImageWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+
+  img {
+    width: auto;
+    max-width: 80%;
+    max-height: 45%;
+  }
 `;
 
-const Divider = styled.span<TextColor>`
+const Line = styled.span<TextColor>`
   display: block;
   position: absolute;
   bottom: 5.6rem;
@@ -75,11 +104,15 @@ const Divider = styled.span<TextColor>`
     props.darkBg ? props.theme.colors.light : props.theme.colors.dark};
   width: 90%;
   height: 2px;
+
+  @media ${displaySize.xl} {
+    bottom: 3vw;
+  }
 `;
 
 const FontName = styled.div<TextColor>`
   position: absolute;
-  right: 2rem;
+  right: 5%;
   bottom: 3rem;
   color: ${(props) =>
     props.darkBg ? props.theme.colors.light : props.theme.colors.dark};
