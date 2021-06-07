@@ -9,6 +9,7 @@ import {
   HeroSection,
   LinkSection,
   NextSection,
+  SliceZone,
 } from "@@/components/Project";
 import { getDocumentsByType, getProjectByUid } from "@@/lib/prismicio";
 import { IProject } from "@@/types";
@@ -30,6 +31,8 @@ export default function Project({ data }: Props): ReactElement {
       <AboutSection {...data.about[0]} />
 
       <ChallengeSection {...data.challenge[0]} />
+
+      <SliceZone sliceZone={data.body} />
 
       <LinkSection demo={data.demo} github={data.github} />
 

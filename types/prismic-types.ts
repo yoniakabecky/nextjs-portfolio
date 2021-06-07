@@ -1,4 +1,5 @@
 // ref: https://github.com/prismicio/prismic-types/blob/master/src/fields.ts
+import { RichTextBlock } from "prismic-reactjs";
 
 export interface ImageField {
   dimensions: { width: number; height: number } | null;
@@ -39,3 +40,20 @@ export interface FilledLinkToDocumentField<
   slug?: string;
   isBroken?: boolean;
 }
+
+export type TitleField = [RichTextBlock];
+
+export type RichTextField = RichTextBlock[];
+
+export type ColorField = `#${string}` | null;
+
+export type SelectField<Enum = string> = Enum | null;
+
+export type AnyRegularField =
+  | TitleField
+  | RichTextField
+  | ImageField
+  | DateField
+  | ColorField
+  | SelectField
+  | BooleanField;
