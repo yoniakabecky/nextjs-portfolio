@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import size from "@@/styles/breakpoints";
+import FadeInAnimation from "./FadeInAnimation";
 import SocialIcons from "./SocialIcons";
 
 export default function TopPageContent(): ReactElement {
@@ -22,7 +23,7 @@ export default function TopPageContent(): ReactElement {
   );
 }
 
-export const Root = styled.section`
+export const Root = styled(FadeInAnimation)`
   position: absolute;
   bottom: 7.5vh;
   left: 10vw;
