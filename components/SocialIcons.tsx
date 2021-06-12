@@ -6,6 +6,7 @@ import GitHubIcon from "./icons/GitHubIcon";
 import InstagramIcon from "./icons/InstagramIcon";
 import LinkedInIcon from "./icons/LinkedInIcon";
 import TwitterIcon from "./icons/TwitterIcon";
+import FileIcon from "./icons/FileIcon";
 
 interface Props {
   full?: boolean;
@@ -94,6 +95,12 @@ const accounts = [
     href: "https://twitter.com/yoniakabecky",
     color: "#1D9BF0",
     icon: <TwitterIcon />,
+    fullOnly: true,
+  },
+  {
+    href: "https://drive.google.com/file/d/1w_bJqp9M8txp4c3N13gqVINME1h9hB0_/view?usp=sharing",
+    color: "#FF6347",
+    icon: <FileIcon />,
     fullOnly: true,
   },
 ];
