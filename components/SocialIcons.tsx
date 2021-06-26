@@ -68,7 +68,7 @@ const IconWrapper = styled.span<IconWrapperProps>`
 
 const accounts = [
   {
-    href: "mailto:yoniakabecky@gamil.com",
+    href: "mailto:yoniakabecky@gmail.com",
     color: "#BB001B",
     icon: <EmailIcon />,
     fullOnly: false,
